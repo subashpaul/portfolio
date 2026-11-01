@@ -491,3 +491,101 @@ dd {
     animation: none;
   }
 }
+
+.avatar { display: block; width: 4.5rem; height: 4.5rem; margin-bottom: 1.5rem; border-radius: 3px; object-fit: cover; }
+.monogram { display: grid; place-items: center; border: 1.5px solid var(--accent); color: var(--accent); background: var(--paper-raised); font-size: 1.375rem; font-weight: 700; letter-spacing: 0.02em; }
+.place { display: flex; align-items: center; gap: 0.4rem; }
+.h-icon { display: inline-block; margin-right: 0.55rem; vertical-align: -0.17em; color: var(--link); }
+dt { display: flex; align-items: center; gap: 0.5rem; } dt .h-icon { margin-right: 0; }
+.note { display: flex; align-items: center; gap: 0.4rem; } .note svg { color: var(--link); flex: none; }
+.lnk { gap: 0.4rem; } .lnk .arrow { transition: transform 220ms var(--ease); } .lnk:hover .arrow { transform: translate(2px, -2px); }
+.has-art { grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr) 12rem; }
+.art { order: 3; align-self: start; } .art svg { display: block; width: 100%; height: auto; }
+.art .bg { fill: var(--paper-raised); stroke: var(--line); }
+.art .ln { stroke: var(--ink-soft); stroke-width: 1.2; fill: none; } .art .faint { opacity: 0.35; stroke-width: 0.8; }
+.art .node { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1.2; }
+.art .ac { fill: var(--accent); stroke: none; } .art .ak { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: 0.7; } .art .dot { fill: var(--paper-raised); }
+@media (max-width: 900px) { .has-art { grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr); } .has-art .art { grid-column: 2; max-width: 14rem; } }
+@media (max-width: 620px) { .has-art .art { grid-column: 1; } }
+
+/* Hero enhancement */
+.masthead { grid-template-columns: minmax(0, 1fr) minmax(17rem, 22rem); }
+.masthead-actions { align-items: stretch; }
+.masthead-actions .btn { align-self: flex-start; }
+.hero-art { width: 100%; margin-bottom: 0.75rem; }
+.hero-art svg { display: block; width: 100%; height: auto; }
+.hero-art .bg { fill: var(--paper-raised); stroke: var(--line); }
+.hero-art .hdot { fill: var(--line); }
+.hero-art .ln { stroke: var(--ink-soft); stroke-width: 1.2; fill: none; }
+.hero-art .ak { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: 0.7; }
+.hero-art .dash { stroke-dasharray: 3 5; }
+.hero-art .node { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1.2; }
+.hero-art .ac { fill: var(--accent); }
+.hero-art text { font: 400 9px var(--mono); fill: var(--ink-soft); text-anchor: middle; }
+.hero-art .flow { stroke-dasharray: 3 4; animation: hero-flow 1.6s linear infinite; }
+@keyframes hero-flow { to { stroke-dashoffset: -14; } }
+.hero-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.7rem 1.75rem; max-width: 68ch; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.hero-facts dt { display: block; padding-top: 0.2rem; color: var(--ink-soft); font: 400 0.75rem/1.7 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-facts dd { color: var(--ink-muted); text-wrap: pretty; }
+@media (max-width: 900px) { .masthead { grid-template-columns: minmax(0, 1fr) 17rem; } }
+@media (max-width: 620px) {
+  .masthead { grid-template-columns: 1fr; }
+  .hero-art { max-width: 22rem; }
+  .hero-facts { grid-template-columns: 1fr; gap: 0.15rem; }
+  .hero-facts dd { margin-bottom: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-art .flow { animation: none; } }
+
+/* Hero actions: button and links match the illustration width */
+.masthead-actions { width: 100%; }
+.masthead-actions .btn { align-self: stretch; justify-content: center; }
+.masthead-actions .links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+.masthead-actions .links li { display: flex; }
+.masthead-actions .links a { flex: 1; justify-content: center; min-height: 2.5rem; padding: 0 0.4rem; border: 1px solid var(--line); border-radius: 3px; background: var(--paper-raised); font-size: 0.8125rem; white-space: nowrap; transition: border-color 220ms var(--ease), color 220ms var(--ease); }
+.masthead-actions .links a:hover { border-color: var(--ink-soft); }
+@media (max-width: 620px) { .masthead-actions { max-width: 22rem; } }
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference) {
+@keyframes hero-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.masthead-copy > *, .masthead-actions > * { animation: hero-rise 0.9s var(--ease) backwards; animation-delay: calc(var(--d, 0) * 90ms + 80ms); }
+.masthead-copy > :nth-child(2) { --d: 1; } .masthead-copy > :nth-child(3) { --d: 2; } .masthead-copy > :nth-child(4) { --d: 3; } .masthead-copy > :nth-child(5) { --d: 4; }
+.masthead-actions > :nth-child(1) { --d: 2; } .masthead-actions > :nth-child(2) { --d: 3; } .masthead-actions > :nth-child(3) { --d: 4; }
+}
+@keyframes reveal-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.js .main :is(.section-heading, .sh, .row, .skill, .foot, .certs li) { opacity: 0; transform: translateY(18px); }
+.js .main :is(.section-heading, .sh, .row, .skill, .foot, .certs li).in { opacity: 1; transform: none; animation: reveal-up 0.8s var(--ease) backwards; animation-delay: calc(var(--i, 0) * 70ms); }
+.js .main :is(.section-heading, .sh) { position: relative; }
+.js .main :is(.section-heading, .sh)::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 3rem; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.9s var(--ease) 0.25s; }
+.js .main :is(.section-heading, .sh).in::after { transform: scaleX(1); }
+:is(#experience, #projects) .row { position: relative; isolation: isolate; transition: opacity 0.4s var(--ease); }
+:is(#experience, #projects) .row::before { content: ""; position: absolute; top: 1.5rem; bottom: 1.5rem; left: -1.1rem; width: 2px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform 0.5s var(--ease); }
+:is(#experience, #projects) :is(.entry-copy, .copy) { transition: transform 0.5s var(--ease); }
+:is(#experience, #projects) .meta { transition: color 0.3s var(--ease); }
+:is(#experience, #projects) :is(.h-icon, .hi) { transition: transform 0.5s var(--ease); }
+@media (hover: hover) {
+:is(#experience, #projects) :is(ol, ul):hover .row:not(:hover):not(:focus-within) { opacity: 0.5; }
+:is(#experience, #projects) .row:is(:hover, :focus-within)::before { transform: scaleY(1); }
+:is(#experience, #projects) .row:is(:hover, :focus-within) :is(.entry-copy, .copy) { transform: translateX(8px); }
+:is(#experience, #projects) .row:is(:hover, :focus-within) .meta { color: var(--link); }
+:is(#experience, #projects) .row:is(:hover, :focus-within) :is(.h-icon, .hi) { transform: scale(1.15) rotate(-8deg); }
+}
+
+.h-badge { display: grid; flex: none; width: 2rem; height: 2rem; place-items: center; border: 1px solid var(--line); border-radius: 3px; background: var(--paper-raised); color: var(--link); }
+.section-heading h2, .sh h2 { display: flex; align-items: center; gap: 0.7rem; }
+#projects .art { transition: transform 0.5s var(--ease); }
+#skills .skill, #skills .certs li { position: relative; transition: opacity 0.4s var(--ease); }
+#skills .skill::before, #skills .certs li::before { content: ""; position: absolute; top: 0.9rem; bottom: 0.9rem; left: -1.1rem; width: 2px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform 0.5s var(--ease); }
+#skills .certs li::before { top: 0.2rem; bottom: 0.2rem; }
+#skills .skill :is(dt, dd), #skills .certs .lnk { transition: transform 0.5s var(--ease), color 0.3s var(--ease); }
+#skills :is(.skill dt .h-icon, .skill dt .hi, .certs .lnk svg:first-child) { transition: transform 0.5s var(--ease); }
+@media (hover: hover) {
+#projects .row:is(:hover, :focus-within) .art { transform: translateY(-3px); }
+#skills dl:hover .skill:not(:hover):not(:focus-within), #skills .certs:hover li:not(:hover):not(:focus-within) { opacity: 0.5; }
+#skills :is(.skill, .certs li):is(:hover, :focus-within)::before { transform: scaleY(1); }
+#skills .skill:is(:hover, :focus-within) :is(dt, dd) { transform: translateX(8px); }
+#skills .skill:is(:hover, :focus-within) dt { color: var(--link); }
+#skills .skill:is(:hover, :focus-within) :is(dt .h-icon, dt .hi) { transform: scale(1.15) rotate(-8deg); }
+#skills .certs li:is(:hover, :focus-within) .lnk { transform: translateX(8px); color: var(--link); }
+#skills .certs li:is(:hover, :focus-within) .lnk svg:first-child { transform: scale(1.15) rotate(-8deg); }
+}

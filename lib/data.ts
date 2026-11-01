@@ -2,10 +2,10 @@ export const profile = {
   name: "Subash Paul",
   role: "Systems Engineer, Tata Consultancy Services",
   place: "Hyderabad, India",
-  bio: "I build web products end to end: workflow tooling, full-stack apps and the pipelines that ship them. Before that, computer-vision research at ISRO.",
+  bio: "I build web products end to end: workflow tooling, full-stack apps and the pipelines that ship them. Before that, computer-vision research at ISRO. My interests run from web engineering to computer networking.",
   email: "subashpaul559@gmail.com",
   github: "https://github.com/subashpaul",
-  linkedin: "https://linkedin.com/in/subash-paul",
+  linkedin: "https://www.linkedin.com/in/subashpaul559",
   resume: "/Subash_Paul_Resume.pdf",
 };
 
@@ -13,13 +13,15 @@ export const experience = [
   { dates: "May 2026 – Now", title: "System Engineer", org: "Tata Consultancy Services", place: "Hyderabad",
     points: ["Contributing to enterprise software delivery and engineering best practices as part of the systems team."] },
   { dates: "Jul 2024 – Apr 2026", title: "SDE", org: "TigmaMinds Pvt. Ltd.", place: "Guwahati",
-    points: ["Built a low-code/no-code workflow web application that automates API development for organizations, using ReactJS, NodeJS, Next.js and TypeScript.", "Managed deployments and pipelines through Azure DevOps."] },
+    points: ["Joined as Junior Software Engineer (Jul 2024); Software Development Engineer from Jun 2025.", "Built a low-code/no-code workflow web application that automates API development for organizations, using ReactJS, NodeJS, Next.js and TypeScript.", "Managed deployments and pipelines through Azure DevOps."] },
   { dates: "Feb 2024 – Jun 2024", title: "SDE Intern", org: "Digital Junction Business & Solutions LLP", place: "Chennai",
     points: ["Developed a full-stack MERN application for online interview assessments and deployed it, with a FastAPI (Python) service, on Azure App Services.", "Set up and maintained CI/CD pipelines on Azure DevOps for automated hosting and deployment."] },
+  { dates: "Sep 2023 – Nov 2023", title: "Intern", org: "Automovill Technologies Pvt Ltd", place: "",
+    points: ["Hands-on experience in cloud computing."] },
   { dates: "Jun 2023 – Jul 2023", title: "Research Intern", org: "Space Applications Centre, ISRO", place: "Ahmedabad",
-    points: ["Worked on object detection and tracking in computer vision using MATLAB and Python.", "Detected moving objects in video and predicted trajectories with algorithms such as the Kalman Filter."] },
+    points: ["Worked on object detection and tracking in computer vision using MATLAB and Python.", "Detected moving objects in video and predicted trajectories with algorithms such as the Kalman Filter.", "Gained exposure to deep learning alongside computer vision and tracking algorithms."] },
   { dates: "Sep 2022 – Nov 2022", title: "Open-Source Contributor", org: "Hacktoberfest 2022 & 2023", place: "",
-    points: ["Built an event management web application for IIT Guwahati.", "Contributed to open-source projects, including codebase deep-dives and bug fixes."] },
+    points: ["Built an event management web application for IIT Guwahati.", "Contributed to open-source projects, including codebase deep-dives and bug fixes.", "Earned Level 3 and Level 4 contributor badges."] },
 ];
 
 export const projects = [
@@ -38,6 +40,7 @@ export const skills = [
   { label: "Languages", items: "C/C++, JavaScript, TypeScript, SQL" },
   { label: "Frontend", items: "Next.js, ReactJS, Tailwind CSS, Shadcn, MUI, Bootstrap" },
   { label: "Backend & data", items: "NodeJS, ExpressJS, MongoDB, PostgreSQL" },
+  { label: "Foundations", items: "Computer Network Operations, Distributed Algorithms" },
   { label: "Delivery", items: "Azure DevOps" },
   { label: "Interests", items: "DevOps, GenAI, Deep Learning, DBMS, Network Security" },
 ];
@@ -53,6 +56,7 @@ export const links: Record<string, { label: string; href: string }> = {
   "SDE": { label: "Certificate", href: "https://drive.google.com/file/d/1kWARPMU_E9wqHpGTkIqJnqkM3xutB5I0/view?usp=sharing" },
   "SDE Intern": { label: "Certificate", href: "https://drive.google.com/file/d/1PgvN2Ogn4x3g9z3SfbcpZHjIUr84QPfK/view?usp=drive_link" },
   "Research Intern": { label: "Certificate", href: "https://drive.google.com/file/d/11XpaSZuhbEYYaJ4SArerytxBUwY1dyXs/view?usp=sharing" },
+  "Intern": { label: "Certificate", href: "https://drive.google.com/file/d/1UsseOMkxpR0zLQqkgcZYlobOQxs7gGlA/view?usp=sharing" },
   "Open-Source Contributor": { label: "Badge", href: "https://www.holopin.io/userbadge/cl9ggapn41096309mnugud1qvh" },
   "Multi-Step Form": { label: "Live demo", href: "https://spform.netlify.app/" },
   "BankUI": { label: "Live demo", href: "https://bankiui.netlify.app/" },
